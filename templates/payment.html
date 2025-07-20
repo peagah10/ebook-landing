@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - As 50 IAs Mais Poderosas do Mundo (2025)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body class="bg-gradient-to-b from-gray-900 to-indigo-900 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-12 max-w-lg">
+        <header class="text-center mb-12">
+            <h1 class="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                Finalize seu Pagamento
+            </h1>
+            <p class="text-lg text-gray-300">As 50 IAs Mais Poderosas do Mundo (2025)</p>
+        </header>
+        
+        <main class="bg-gray-800 bg-opacity-50 p-8 rounded-xl shadow-2xl">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold mb-4">Escaneie o QR Code</h2>
+                <p class="text-gray-300 mb-6">
+                    Use o app do seu banco para escanear o QR Code Pix abaixo 
+                    ou copie o código para pagar.
+                </p>
+                
+                <div class="bg-white p-4 rounded-xl inline-block mb-6">
+                    <img src="{{ qr_code }}" alt="QR Code Pix" class="w-48 h-48 mx-auto">
+                </div>
+                
+                <div class="mb-6">
+                    <p class="text-sm text-gray-400 mb-2">Ou copie o código Pix:</p>
+                    <div class="flex items-center justify-center">
+                        <input type="text" id="pix-code" value="{{ pix_copia_cola }}" readonly
+                               class="bg-gray-700 text-white px-4 py-2 rounded-l-lg w-full text-xs">
+                        <button onclick="copyPixCode()" 
+                                class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mb-6 border-t border-gray-700 pt-6">
+                    <p class="text-gray-300 mb-2">Valor a pagar:</p>
+                    <p class="text-3xl font-bold text-green-400">R$19,90</p>
+                </div>
+                
+                <div class="bg-yellow-800 bg-opacity-30 p-4 rounded-lg text-yellow-300 text-sm">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Após confirmação do pagamento, o e-book será enviado automaticamente para
+                    <strong>{{ email }}</strong>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="/" class="text-indigo-400 hover:text-indigo-300 flex items-center justify-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Voltar para a página inicial
+                </a>
+            </div>
+        </main>
+        
+        <footer class="mt-20 px-4 py-6 text-center text-sm text-gray-400 border-t border-gray-700 bg-gradient-to-t from-gray-900 to-transparent">
+  <p class="mb-2">
+    &copy; 2025 - <span class="text-white font-semibold">As 50 IAs Mais Poderosas do Mundo</span>
+  </p>
+  <p class="flex items-center justify-center gap-1">
+    <i class="fas fa-code text-yellow-500"></i> Desenvolvido por 
+    <a href="https://www.peagahtech.site" target="_blank" class="text-pink-400 hover:underline font-semibold flex items-center">
+      PeagahTech <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+    </a>
+  </p>
+</footer>
+    </div>
+    
+    <script>
+        function copyPixCode() {
+            const pixCode = document.getElementById('pix-code');
+            pixCode.select();
+            document.execCommand('copy');
+            alert('Código Pix copiado!');
+        }
+        
+        // Verificar status do pagamento a cada 5 segundos
+        const paymentId = "{{ payment_id }}";
+        const checkInterval = setInterval(function() {
+            fetch(`/check-payment/${paymentId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'approved') {
+                        clearInterval(checkInterval);
+                        alert('Pagamento confirmado! O e-book foi enviado para o seu e-mail.');
+                        window.location.href = '/';
+                    }
+                })
+                .catch(error => console.error('Erro ao verificar pagamento:', error));
+        }, 5000);
+    </script>
+</body>
+</html>

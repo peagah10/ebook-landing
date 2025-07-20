@@ -1,0 +1,8 @@
+/* Estilos adicionais */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.bg-clip-text {
+    -webkit-background-clip: text;
+}
