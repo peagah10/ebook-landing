@@ -3,108 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>As 50 IAs Mais Poderosas do Mundo (2025)</title>
+    <title>As 50 IAs Mais Poderosas do Mundo (2025) - Guia Exclusivo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        .pulse-animation { animation: pulse 2s infinite; }
+        
+        @keyframes countdown {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .countdown-pulse { animation: countdown 1s infinite; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-animation { animation: float 3s ease-in-out infinite; }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(147, 51, 234, 0.6); }
+        }
+        .glow-animation { animation: glow 2s ease-in-out infinite; }
+    </style>
 </head>
 <body class="bg-gradient-to-b from-gray-900 to-indigo-900 text-white min-h-screen">
-    <div class="container mx-auto px-4 py-12 max-w-6xl">
-        <header class="text-center mb-16">
+    <!-- Barra de urgência -->
+    <div class="bg-red-600 text-white text-center py-2 px-4 text-sm font-semibold">
+        <i class="fas fa-fire mr-2"></i>
+        <span class="countdown-pulse inline-block">OFERTA ESPECIAL:</span> Apenas <span id="countdown" class="font-bold">24:00:00</span> para garantir 50% OFF!
+    </div>
+
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header melhorado -->
+        <header class="text-center mb-12">
+            <div class="bg-yellow-500 text-black px-4 py-2 rounded-full inline-block text-sm font-bold mb-4">
+                🔥 +10.847 profissionais já baixaram
+            </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-                As 50 IAs Mais Poderosas do Mundo
+                Descubra as 50 IAs que Estão Revolucionando o Mercado em 2025
             </h1>
-            <p class="text-xl md:text-2xl font-light text-gray-300">Edição 2025 | Guia Definitivo</p>
+            <p class="text-xl md:text-2xl font-light text-gray-300 mb-6">
+                O guia completo que grandes empresas não querem que você conheça
+            </p>
+            <div class="flex justify-center items-center gap-6 text-sm text-yellow-400">
+                <div class="flex items-center">
+                    <i class="fas fa-star mr-1"></i>
+                    <span>4.9/5 (2.341 avaliações)</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-download mr-1"></i>
+                    <span>Download instantâneo</span>
+                </div>
+            </div>
         </header>
-        
-        <main class="flex flex-col md:flex-row items-center gap-12">
-            <div class="w-full md:w-1/2">
-                <div class="bg-gradient-to-br from-indigo-500 to-purple-700 p-1 rounded-2xl shadow-2xl">
-                    <img src="{{ url_for('static', filename='img/ebook-cover.svg') }}" 
-                         alt="Capa do e-book As 50 IAs Mais Poderosas do Mundo" 
-                         class="w-full rounded-2xl">
+
+        <!-- Seção principal com layout otimizado -->
+        <main class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+            <!-- Lado esquerdo: Imagem do E-book MAIOR -->
+            <div class="w-full lg:w-2/5 order-2 lg:order-1">
+                <div class="relative max-w-sm mx-auto lg:max-w-md">
+                    <!-- Efeitos visuais de fundo -->
+                    <div class="absolute -inset-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-30 pulse-animation"></div>
+                    <div class="absolute -inset-3 bg-gradient-to-r from-indigo-500 to-purple-700 rounded-2xl blur-lg opacity-60 glow-animation"></div>
+                    
+                    <!-- Container da imagem -->
+                    <div class="relative bg-gradient-to-br from-indigo-500 to-purple-700 p-3 rounded-2xl shadow-2xl float-animation">
+                        <img src="static/img/ebook.png" 
+                             alt="Capa do e-book As 50 IAs Mais Poderosas do Mundo" 
+                             class="w-full rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-500">
+                    </div>
+                    
+                    <!-- Badges flutuantes -->
+                    <div class="absolute -top-6 -right-6 bg-red-500 text-white px-4 py-2 rounded-full text-lg font-bold transform rotate-12 shadow-lg pulse-animation">
+                        50% OFF
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold transform -rotate-12 shadow-lg">
+                        <i class="fas fa-download mr-2"></i>
+                        PDF Digital
+                    </div>
+                    <div class="absolute top-4 -left-8 bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold transform -rotate-45 shadow-lg">
+                        NOVO 2025
+                    </div>
+                </div>
+                
+                <!-- Estatísticas embaixo da imagem -->
+                <div class="grid grid-cols-3 gap-4 mt-10 text-center">
+                    <div class="bg-gray-800 bg-opacity-50 p-4 rounded-xl border border-yellow-500">
+                        <div class="text-3xl font-bold text-yellow-400">4.9★</div>
+                        <div class="text-gray-400 text-sm">2.341 avaliações</div>
+                    </div>
+                    <div class="bg-gray-800 bg-opacity-50 p-4 rounded-xl border border-green-500">
+                        <div class="text-3xl font-bold text-green-400">10.847</div>
+                        <div class="text-gray-400 text-sm">downloads</div>
+                    </div>
+                    <div class="bg-gray-800 bg-opacity-50 p-4 rounded-xl border border-blue-500">
+                        <div class="text-3xl font-bold text-blue-400">57</div>
+                        <div class="text-gray-400 text-sm">IAs incluídas</div>
+                    </div>
+                </div>
+                
+                <!-- Selo de garantia -->
+                <div class="text-center mt-8">
+                    <div class="bg-green-600 text-white px-6 py-3 rounded-full inline-block text-sm font-semibold">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        Descubra em minutos o que levaria dias para pesquisar.
+                    </div>
                 </div>
             </div>
             
-            <div class="w-full md:w-1/2">
-                <h2 class="text-3xl font-bold mb-6">Descubra as 50 Inteligências Artificiais que Estão Mudando o Mundo em 2025</h2>
+            <!-- Lado direito: Conteúdo -->
+            <div class="w-full lg:w-3/5 order-1 lg:order-2">
+                <!-- Problema/Agitação -->
+                <div class="bg-red-900 bg-opacity-30 border-l-4 border-red-500 p-6 mb-8 rounded-r-lg">
+                    <h3 class="text-xl font-bold text-red-400 mb-3">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        Você está ficando para trás?
+                    </h3>
+                    <p class="text-gray-300">
+                        Enquanto você perde tempo com tarefas manuais, seus concorrentes já usam IA para 
+                        <strong class="text-white">automatizar 80% do trabalho</strong> e multiplicar resultados.
+                    </p>
+                </div>
+
+                <!-- Solução -->
+                <h2 class="text-3xl font-bold mb-6">
+                    Domine as 50 IAs Mais Poderosas e Saia na Frente da Concorrência
+                </h2>
                 <p class="text-lg mb-6 text-gray-300">
-                    Conheça as 50 ferramentas de IA mais inovadoras de 2025.
-                    Descubra como grandes empresas e profissionais estão usando IA para economizar tempo, multiplicar lucros e ganhar vantagem competitiva.
+                    Descubra exatamente quais IAs os <strong class="text-white">top 1% dos profissionais</strong> 
+                    estão usando para economizar 4-6 horas por dia e aumentar a produtividade em 300%.
                 </p>
                 
-                <div class="bg-gray-800 bg-opacity-50 p-6 rounded-xl mb-8">
-                    <h3 class="text-xl font-semibold mb-4">O que você vai encontrar:</h3>
-                    <ul class="space-y-3">
+                <!-- Benefícios principais -->
+                <div class="bg-gray-800 bg-opacity-50 p-6 rounded-xl mb-8 border border-blue-500">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-400">
+                        <i class="fas fa-rocket mr-2"></i>
+                        O que você vai descobrir:
+                    </h3>
+                    <ul class="space-y-4">
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
-                            <span>Análises completas das 50 IAs mais avançadas de 2025.
-                            Entenda como cada tecnologia está impactando o mundo digital.</span>
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-3 text-lg"></i>
+                            <span><strong>50 IAs categorizadas por função:</strong> Copywriting, design, análise de dados, automação, vendas e muito mais</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
-                            <span> Funcionalidades práticas e tarefas que cada IA executa.
-                            Desde automações simples até soluções complexas com IA generativa.</span>
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-3 text-lg"></i>
+                            <span><strong>Tutoriais passo a passo:</strong> Como usar cada IA para máximo resultado (mesmo sendo iniciante)</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
-                            <span>Temas organizados por tópicos detalhados e acessíveis.
-                            Ideal para quem quer aprender rápido ou aplicar no negócio.</span>
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-3 text-lg"></i>
+                            <span><strong>Cases reais de sucesso:</strong> Como profissionais aumentaram receita em até 500% usando essas IAs</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
-                            <span>7 IAs bônus com potencial de destaque no mercado de trabalho.
-                            Ferramentas inovadoras que já estão sendo adotadas por grandes empresas.
-
-                            </span>
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-3 text-lg"></i>
+                            <span><strong>7 IAs secretas bônus:</strong> Ferramentas que menos de 1% conhece (vantagem competitiva garantida)</span>
                         </li>
                     </ul>
                 </div>
+
+                <!-- Urgência e escassez -->
+                <div class="bg-orange-900 bg-opacity-40 border border-orange-500 p-4 rounded-lg mb-6">
+                    <div class="flex items-center text-orange-400 font-semibold mb-2">
+                        <i class="fas fa-clock mr-2"></i>
+                        ATENÇÃO: Oferta por tempo limitado!
+                    </div>
+                    <p class="text-sm text-gray-300">
+                        Apenas hoje você garante acesso por <strong>50% OFF</strong>. 
+                        Amanhã volta ao preço normal de R$ 39,90.
+                    </p>
+                </div>
                 
+                <!-- Preço e CTA -->
                 <div class="text-center">
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-                        <div class="text-3xl font-bold">
-                            <span class="text-lg line-through text-gray-400">R$39,90</span>
-                            <span class="text-4xl text-green-400">R$19,90</span>
+                    <div class="bg-gray-800 p-6 rounded-xl mb-6">
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+                            <div class="text-center">
+                                <div class="text-lg line-through text-gray-400">De R$ 39,90</div>
+                                <div class="text-4xl font-bold text-green-400">
+                                    R$ 19,90
+                                </div>
+                                <div class="text-sm text-gray-400">pagamento único</div>
+                            </div>
+                            <div class="bg-red-600 px-4 py-2 rounded-full text-white font-bold text-lg">
+                                50% OFF
+                            </div>
                         </div>
-                        <div class="bg-green-500 px-3 py-1 rounded-full text-sm font-semibold">
-                            50% OFF
+                        
+                        <div class="text-sm text-gray-400 mb-4">
+                         Menos que o preço de um almoço para transformar sua carreira
                         </div>
                     </div>
                     
                     <form id="payment-form" method="POST" action="/criar-pagamento" class="mb-4">
                         <div class="flex flex-col gap-4">
-                            <input type="email" name="email" placeholder="Seu melhor e-mail" required
-                                   class="p-4 rounded-lg bg-gray-800 border border-gray-700 text-white w-full">
+                            <input type="email" name="email" placeholder="Digite seu melhor e-mail para receber o guia" required
+                                   class="p-4 rounded-lg bg-gray-800 border-2 border-gray-700 text-white w-full focus:border-green-500 focus:outline-none text-base">
                             <button type="submit" 
                                     class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 
-                                    text-white font-bold py-4 px-6 rounded-lg text-lg transition-all 
-                                    transform hover:scale-105 flex items-center justify-center">
-                                <i class="fas fa-bolt mr-2"></i> Desbloquei o poder da IA por apenas R$19,90 (Pix)
+                                    text-white font-bold py-6 px-6 rounded-lg text-xl transition-all 
+                                    transform hover:scale-105 flex items-center justify-center shadow-2xl">
+                                <i class="fas fa-lightning-bolt mr-3 text-2xl"></i> 
+                                QUERO DOMINAR AS 50 IAs AGORA!
                             </button>
                         </div>
                     </form>
                     
-                    <p class="text-sm text-gray-400">
-                        <i class="fas fa-lock mr-1"></i> Pagamento 100% seguro via Mercado Pago
-                    </p>
+                    <div class="flex flex-col items-center gap-2 text-sm text-gray-400">
+                        <div class="flex items-center">
+                            <i class="fas fa-lock mr-2 text-green-400"></i> 
+                            Pagamento 100% seguro via Mercado Pago
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-download mr-2 text-blue-400"></i> 
+                            Acesso imediato após confirmação do pagamento
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
+
+        <!-- Prova social -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-center mb-8">
+                Veja o que nossos clientes estão dizendo:
+            </h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Marina Silva</div>
+                            <div class="text-sm text-gray-400">Marketing Digital</div>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-2">★★★★★</div>
+                    <p class="text-gray-300 text-sm">
+                        "Consegui automatizar 70% das minhas tarefas de copywriting. 
+                        Agora produzo em 2 horas o que antes levava o dia todo!"
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Roberto Fernandes</div>
+                            <div class="text-sm text-gray-400">Empreendedor</div>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-2">★★★★★</div>
+                    <p class="text-gray-300 text-sm">
+                        "Investimento que se pagou nas primeiras horas. 
+                        As IAs de análise de dados aumentaram minha receita em 40%."
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Ana Costa</div>
+                            <div class="text-sm text-gray-400">Designer</div>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-2">★★★★★</div>
+                    <p class="text-gray-300 text-sm">
+                        "Material super completo! As 7 IAs bônus são realmente um diferencial. 
+                        Recomendo para qualquer profissional."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-center mb-8">Perguntas Frequentes</h3>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-gray-800 rounded-lg border border-gray-700">
+                    <button class="w-full text-left p-6 flex justify-between items-center faq-toggle">
+                        <span class="font-semibold">Como recebo o material após o pagamento?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="p-6 pt-0 text-gray-300 faq-content hidden">
+                        Após a confirmação do pagamento, o eBook em PDF será enviado automaticamente para o seu e-mail, disponível para download. Todo o processo é 100% automatizado e leva apenas alguns minutos.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 rounded-lg border border-gray-700">
+                    <button class="w-full text-left p-6 flex justify-between items-center faq-toggle">
+                        <span class="font-semibold">Nunca usei IA. É fácil de usar?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="p-6 pt-0 text-gray-300 faq-content hidden">
+                        Sim! O e-book foi criado justamente pensando em pessoas que não têm intimidade com tecnologia. Cada ferramenta é apresentada com uma explicação simples, mostrando para que serve, como usar e qual o benefício prático no seu dia a dia.
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg border border-gray-700">
+                    <button class="w-full text-left p-6 flex justify-between items-center faq-toggle">
+                        <span class="font-semibold">Para quem é esse e-book?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="p-6 pt-0 text-gray-300 faq-content hidden">
+                        Este e-book foi criado para iniciantes e profissionais que desejam usar a inteligência artificial para aumentar sua produtividade, criatividade ou gerar renda extra. Ideal para freelancers, professores, empreendedores, criadores de conteúdo, programadores e muito mais.
+                    </div>
+                </div>
+        </section>
+
+        <!-- CTA final -->
+        <section class="text-center bg-gradient-to-r from-blue-900 to-purple-900 p-8 rounded-2xl">
+            <h3 class="text-3xl font-bold mb-4">
+                Não perca esta oportunidade única!
+            </h3>
+            <p class="text-xl mb-6 text-gray-300">
+                Junte-se a mais de 10.000 profissionais que já dominam o futuro com IA
+            </p>
+            <a href="#payment-form" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 
+                                              text-white font-bold py-4 px-8 rounded-lg text-lg transition-all 
+                                              transform hover:scale-105 inline-flex items-center">
+                <i class="fas fa-rocket mr-3"></i>
+                GARANTIR MINHA VANTAGEM COMPETITIVA AGORA!
+            </a>
+        </section>
         
         <footer class="mt-20 px-4 py-6 text-center text-sm text-gray-400 border-t border-gray-700 bg-gradient-to-t from-gray-900 to-transparent">
-  <p class="mb-2">
-    &copy; 2025 - <span class="text-white font-semibold">As 50 IAs Mais Poderosas do Mundo</span>
-  </p>
-  <p class="flex items-center justify-center gap-1">
-    <i class="fas fa-code text-yellow-500"></i> Desenvolvido por 
-    <a href="https://www.peagahtech.site" target="_blank" class="text-pink-400 hover:underline font-semibold flex items-center">
-      PeagahTech <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-    </a>
-  </p>
-</footer>
-
+            <p class="mb-2">
+                &copy; 2025 - <span class="text-white font-semibold">As 50 IAs Mais Poderosas do Mundo</span>
+            </p>
+            <p class="flex items-center justify-center gap-1">
+                <i class="fas fa-code text-yellow-500"></i> Desenvolvido por 
+                <a href="https://www.peagahtech.site" target="_blank" class="text-pink-400 hover:underline font-semibold flex items-center">
+                    PeagahTech <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                </a>
+            </p>
+            <div class="mt-4 flex justify-center gap-6 text-xs">
+                <a href="#" class="hover:text-white">Política de Privacidade</a>
+                <a href="#" class="hover:text-white">Termos de Uso</a>
+                <a href="#" class="hover:text-white">Contato</a>
+            </div>
+        </footer>
     </div>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 0, 0);
+            
+            const diff = tomorrow - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Smooth scroll para CTA
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Dark mode support
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
